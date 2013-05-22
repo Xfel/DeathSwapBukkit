@@ -1,0 +1,11 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+name: mc-bukkit-deathswap
+main: com.github.xfel.bukkit.deathswap.DeathSwapGame
+version: 0.1
+
+commands:
+   command:
+      description: A Command
+      usage: /<command> 
