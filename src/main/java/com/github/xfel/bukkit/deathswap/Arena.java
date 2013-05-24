@@ -2,6 +2,8 @@ package com.github.xfel.bukkit.deathswap;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class Arena {
 	
@@ -17,6 +19,10 @@ public class Arena {
 		
 		Location p2loc = p2.getLocation();
 		
+		PotionEffect pe = new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 20, Integer.MAX_VALUE);
+		
+		p1.addPotionEffect(pe,true);
+		p2.addPotionEffect(pe,true);
 		
 		p1.teleport(p2loc);
 		p2.teleport(p1loc);
