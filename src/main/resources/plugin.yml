@@ -3,7 +3,8 @@
 #set( $symbol_escape = '\' )
 name: mc-bukkit-deathswap
 main: com.github.xfel.bukkit.deathswap.DeathSwapGame
-version: 0.1
+version: ${artifact.version}
+authors: [Xfel, Larethian]
 
 commands:
    command:
