@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.xfel.bukkit.plugins</groupId>
 	<artifactId>mc-bukkit-deathswap</artifactId>
@@ -7,25 +8,25 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>DeathSwapBukkit</name>
 	<url>https://github.com/Xfel/DeathSwapBukkit</url>
-	
+
 	<scm>
 		<connection>scm:git:git://github.com/Xfel/DeathSwapBukkit.git</connection>
 		<developerConnection>scm:git:https://github.com/Xfel/DeathSwapBukkit.git</developerConnection>
 		<url>https://github.com/Xfel/DeathSwapBukkit</url>
 	</scm>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<minecraft.version>1.4.7-R1.0</minecraft.version>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>bukkit-repo</id>
 			<url>http://repo.bukkit.org/content/groups/public</url>
 		</repository>
 	</repositories>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.bukkit</groupId>
@@ -41,8 +42,26 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
+		<resources>
+			<!-- Variablen in dateien einfügen -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.yml</include>
+				</includes>
+			</resource>
+			<!-- Keine variablen einfügen, wenn es sich nicht um textdateien handelt -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/*.yml</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
